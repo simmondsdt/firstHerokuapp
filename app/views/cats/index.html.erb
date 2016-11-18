@@ -1,0 +1,30 @@
+<h1> All Cats For <%= current_user.full_name %></h1>
+<hr />
+
+<% if @cats.count >= 3 %>
+  <h3 class='text-danger'>You're a crazy cat lady!</h3>
+<% end %>
+
+
+<div>
+  <% if @cats.any? %>
+    <% @cats.each do |cat| %>
+      <div class='well col-sm-12 col-md-4'
+        <h6><%= cat.name %></h6>
+        <div>
+          <%= link_to 'Show', cat_path(cat), class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>There are no cats, please create one.</h3>
+  <% end %>
+</div>
+<div class='clearfix'></div>
+<hr />
+  <div class='well'>
+    <%= will_paginate @cats %>
+  </div>
+<hr />
+<%= link_to 'New Cat', new_cat_path, class: 'btn' %>--
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
