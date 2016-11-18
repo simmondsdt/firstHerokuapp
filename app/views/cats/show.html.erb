@@ -1,5 +1,7 @@
 <h1> <%= @cat.name %> </h1>
-<img src=<%= @cat.picture.url(:thumb) %> />
+<% if @cat.picture? %>
+  <%= cl_image_tag(@user.picture.path, {size: '125x125', crop: :fit}) %>
+<% end %>
 
 <p><%= @cat.age %></p>
 <p><%= @cat.gender %></p>

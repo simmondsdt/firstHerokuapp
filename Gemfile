@@ -10,9 +10,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-gem 'paperclip'
 gem 'will_paginate'
 gem 'devise'
+gem 'cloudinary'
+gem 'attachinary'
 
 
 group :development, :test do
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'populator'
   gem 'annotate'
   # gem 'boostrap-sass'
+  gem 'dotenv-rails'
 end
 
 group :development do
